@@ -78,6 +78,14 @@ export const Welcome = () => {
       <h1> Liste des logements disponibles</h1>
 
       {logementList.map((val, key) => {
+        // setNomlog(val.log);
+        // setNbpiece(val.NbPièces);
+        // setEtat(val.Etat);
+        // setAdresse(val.Adresse);
+        // setPrix(val.Prix);
+        // setDated(val.DateDispo.substr(0, 10));
+        // setVille(val.Ville);
+        // setSuperficie(val.Superficie);
         return (
           <div key={val.Identifiant} className="logement">
             <p>Nom du logement : {val.Nomlog} </p>
