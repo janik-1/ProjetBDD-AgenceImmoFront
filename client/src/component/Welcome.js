@@ -58,6 +58,27 @@ export const Welcome = () => {
       });
   };
 
+  const setLogement = (
+    nomloge,
+    nbpie,
+    et,
+    adresse,
+    prix,
+    date,
+    ville,
+    superficie
+  ) => {
+    setNomlog(nomloge);
+    setNbpiece(nbpie);
+    setEtat(et);
+    setAdresse(adresse);
+    setPrix(prix);
+    setDated(date);
+    setVille(ville);
+    setSuperficie(superficie);
+    setShowForm(!showform);
+  };
+
   const getGarage = () => {
     Axios.get("http://localhost:8000/getgarage")
       .then((response) => {
@@ -78,14 +99,6 @@ export const Welcome = () => {
       <h1> Liste des logements disponibles</h1>
 
       {logementList.map((val, key) => {
-        // setNomlog(val.log);
-        // setNbpiece(val.NbPièces);
-        // setEtat(val.Etat);
-        // setAdresse(val.Adresse);
-        // setPrix(val.Prix);
-        // setDated(val.DateDispo.substr(0, 10));
-        // setVille(val.Ville);
-        // setSuperficie(val.Superficie);
         return (
           <div key={val.Identifiant} className="logement">
             <p>Nom du logement : {val.Nomlog} </p>
@@ -100,7 +113,16 @@ export const Welcome = () => {
 
             <button
               onClick={() => {
-                setShowForm(!showform);
+                setLogement(
+                  val.Nomlog,
+                  val.NbPièces,
+                  val.Etat,
+                  val.Adresse,
+                  val.Prix,
+                  val.DateDispo.substr(0, 10),
+                  val.Ville,
+                  val.Superficie
+                );
               }}
             >
               Cliquez ici pour modifier le logement.
@@ -111,7 +133,7 @@ export const Welcome = () => {
                 <label> Nom du logement </label>
                 <input
                   type="text"
-                  defaultValue={val.Nomlog}
+                  value={nomlog}
                   onChange={(event) => {
                     setNomlog(event.target.value); // set rien du tout
                   }}
@@ -120,7 +142,7 @@ export const Welcome = () => {
                 <label> Nombre de pièces </label>
                 <input
                   type="number"
-                  defaultValue={val.NbPièces}
+                  value={nbpiece}
                   onChange={(event) => {
                     setNbpiece(event.target.value);
                   }}
@@ -128,7 +150,7 @@ export const Welcome = () => {
                 <label> Etat </label>
                 <input
                   type="text"
-                  defaultValue={val.Etat}
+                  value={etat}
                   onChange={(event) => {
                     setEtat(event.target.value);
                   }}
@@ -136,7 +158,7 @@ export const Welcome = () => {
                 <label> Adresse </label>
                 <input
                   type="text"
-                  defaultValue={val.Adresse}
+                  value={adresse}
                   onChange={(event) => {
                     setAdresse(event.target.value);
                   }}
@@ -144,7 +166,7 @@ export const Welcome = () => {
                 <label> Prix </label>
                 <input
                   type="number"
-                  defaultValue={val.Prix}
+                  value={prix}
                   onChange={(event) => {
                     setPrix(event.target.value);
                   }}
@@ -153,7 +175,7 @@ export const Welcome = () => {
                 <label> Date disponibilités </label>
                 <input
                   type="date"
-                  defaultValue={val.DateDispo.substr(0, 10)}
+                  value={dated}
                   onChange={(event) => {
                     setDated(event.target.value);
                   }}
@@ -161,7 +183,7 @@ export const Welcome = () => {
                 <label> Ville </label>
                 <input
                   type="text"
-                  defaultValue={val.Ville}
+                  defaultValue={ville}
                   onChange={(event) => {
                     setVille(event.target.value);
                   }}
@@ -169,7 +191,7 @@ export const Welcome = () => {
                 <label> Superficie </label>
                 <input
                   type="number"
-                  defaultValue={val.Superficie}
+                  defaultValue={superficie}
                   onChange={(event) => {
                     setSuperficie(event.target.value);
                   }}
