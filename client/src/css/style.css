@@ -79,6 +79,10 @@
     border-radius: 10px;
 }
 
+.welcome button a{
+    text-decoration: none;
+}
+
 
 .welcome button :visited{
     text-decoration: none;
@@ -93,4 +97,16 @@
     background-color: silver;
     margin-bottom: 10px;
     display: inline-block;
+}
+
+.logementsell button{
+    text-decoration: none;
+    color: black;
+    border-radius: 10px;
+}
+
+
+.logementsell button :visited{
+    text-decoration: none;
+    color: black;
 }

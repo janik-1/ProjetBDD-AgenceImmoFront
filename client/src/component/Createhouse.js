@@ -104,13 +104,13 @@ export const Createhouse = () => {
           required
         />
 
-        <button onClick={addLogement}>
-          <a href="/">Ajouter le nouveau logement à la liste</a>
+        <button onClick={addLogement} type="button" class="btn btn-secondary text-light mt-2 mb-2">
+          <a href="/" class="text-decoration-none text-white">Ajouter le nouveau logement à la liste</a>
         </button>
       </form>
 
-      <button>
-        <a href="/"> Retour à la page d'accueil</a>
+      <button type="button" class="btn btn-secondary text-white white">
+        <a href="/" class="text-decoration-none text-white"> Retour à la page d'accueil</a>
       </button>
     </div>
   );

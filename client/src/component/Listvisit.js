@@ -1,6 +1,9 @@
 import Axios from "axios";
 import { useState, useEffect } from "react";
 
+import "../css/style.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Sidebar from "./sidebar";
 import Header from "./Header";
 
@@ -33,8 +36,8 @@ export const Listvisit = () => {
         );
       })}
 
-      <button>
-        <a href="/"> Retour à la page d'accueil</a>
+      <button type="button" class="btn btn-secondary text-white white">
+        <a href="/" class="text-white text-decoration-none"> Retour à la page d'accueil</a>
       </button>
     </div>
   );
