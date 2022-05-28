@@ -1,4 +1,18 @@
-.createHouse{
+.createHouse {
+    margin: 0 auto;
     text-align: center;
- 
-}
+  }
+  .createHouse form{
+  width:350px;
+  }
+
+  .createHouse label {
+    text-align: left;
+    display: inline-block;
+  }
+  .createHouse input, .createHouse textarea, .createHouse select {
+    width: 100%;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: block;
+  }

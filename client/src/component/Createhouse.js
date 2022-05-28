@@ -3,6 +3,11 @@ import Axios from "axios";
 
 import "../css/Createhouse.css";
 
+import Header from "./Header";
+import Sidebar from "./sidebar";
+import "../css/style.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export const Createhouse = () => {
   const [nomlog, setNomlog] = useState("");
   const [nbpiece, setNbpiece] = useState(0);
@@ -31,66 +36,78 @@ export const Createhouse = () => {
 
   return (
     <div className="createHouse">
-      <label> Nom du logement </label>
-      <input
-        type="text"
-        onChange={(event) => {
-          setNomlog(event.target.value);
-        }}
-      />
-      <label> Nombre de pièces </label>
-      <input
-        type="number"
-        onChange={(event) => {
-          setNbpiece(event.target.value);
-        }}
-      />
-      <label> Etat </label>
-      <input
-        type="text"
-        onChange={(event) => {
-          setEtat(event.target.value);
-        }}
-      />
-      <label> Adresse </label>
-      <input
-        type="text"
-        onChange={(event) => {
-          setAdresse(event.target.value);
-        }}
-      />
-      <label> Prix </label>
-      <input
-        type="number"
-        onChange={(event) => {
-          setPrix(event.target.value);
-        }}
-      />
-      <label> Date disponibilités </label>
-      <input
-        type="date"
-        onChange={(event) => {
-          setDated(event.target.value);
-        }}
-      />
-      <label> Ville </label>
-      <input
-        type="text"
-        onChange={(event) => {
-          setVille(event.target.value);
-        }}
-      />
-      <label> Superficie </label>
-      <input
-        type="number"
-        onChange={(event) => {
-          setSuperficie(event.target.value);
-        }}
-      />
+      <Sidebar />
+      <Header />
+      <h2>Ajouter un nouveau logement</h2>
+      <form class="mx-auto">
+        <label> Nom du logement </label>
+        <input
+          type="text"
+          onChange={(event) => {
+            setNomlog(event.target.value);
+          }}
+          required
+        />
+        <label> Nombre de pièces </label>
+        <input
+          type="number"
+          onChange={(event) => {
+            setNbpiece(event.target.value);
+          }}
+          required
+        />
+        <label> Etat </label>
+        <input
+          type="text"
+          onChange={(event) => {
+            setEtat(event.target.value);
+          }}
+          required
+        />
+        <label> Adresse </label>
+        <input
+          type="text"
+          onChange={(event) => {
+            setAdresse(event.target.value);
+          }}
+          required
+        />
+        <label> Prix </label>
+        <input
+          type="number"
+          onChange={(event) => {
+            setPrix(event.target.value);
+          }}
+          required
+        />
+        <label> Date disponibilités </label>
+        <input
+          type="date"
+          onChange={(event) => {
+            setDated(event.target.value);
+          }}
+        />
+        <label> Ville </label>
+        <input
+          type="text"
+          onChange={(event) => {
+            setVille(event.target.value);
+          }}
+          required
+        />
+        <label> Superficie </label>
+        <input
+          type="number"
+          onChange={(event) => {
+            setSuperficie(event.target.value);
+          }}
+          required
+        />
 
-      <button onClick={addLogement}>
-        <a href="/">Ajouter le nouveau logement à la liste</a>
-      </button>
+        <button onClick={addLogement}>
+          <a href="/">Ajouter le nouveau logement à la liste</a>
+        </button>
+      </form>
 
       <button>
         <a href="/"> Retour à la page d'accueil</a>

@@ -1,6 +1,9 @@
 import Axios from "axios";
 import { useState, useEffect } from "react";
 
+import Sidebar from "./sidebar";
+import Header from "./Header";
+
 export const Listvisit = () => {
   const [ListVisit, setListVisit] = useState([]);
 
@@ -14,7 +17,9 @@ export const Listvisit = () => {
 
   return (
     <div className="listvist">
-      <h1> Liste des visites</h1>
+      <Sidebar />
+      <Header />
+      <h2> Liste des visites</h2>
 
       {ListVisit.map((val, key) => {
         return (

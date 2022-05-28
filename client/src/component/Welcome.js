@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import "../css/Welcome.css";
+import "../css/style.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { UpdatLogement } from "./Updatehouse";
 import { DeleteLogement } from "./Deletelogement";
 import { Newvisit } from "./Newvisite";
 import { Ventelogement } from "./Ventelogement";
 import { AddGarage } from "./Addgarage";
+
+import Sidebar from "./sidebar";
+import Header from "./Header";
 
 export const Welcome = () => {
   const [logementList, setLogementList] = useState([]);
@@ -96,11 +101,16 @@ export const Welcome = () => {
 
   return (
     <div className="welcome">
-      <h1> Liste des logements disponibles</h1>
+      <div class="container-fluid">
+      <Sidebar />
+      <Header />
+      <h2 class ="p-3"> Liste des logements disponibles</h2>
 
       {logementList.map((val, key) => {
         return (
-          <div key={val.Identifiant} className="logement">
+          <div class="row align-center bg-light d-flex rounded">
+            <h3>Logement : </h3>
+          <div key={val.Identifiant} className="logements" class="col-md-6 col-sm-12">
             <p>Nom du logement : {val.Nomlog} </p>
             <p>Nombre de pièces :{val.NbPièces}</p>
             <p>Etat du logement : {val.Etat}</p>
@@ -109,8 +119,8 @@ export const Welcome = () => {
             <p>Date disponibilités : {val.DateDispo.substr(0, 10)}</p>
             <p> Ville : {val.Ville}</p>
             <p>Superficie : {val.Superficie} m²</p>
-            <p>------------------------------</p>
-
+          </div>
+          <div class="col-md-6 col-sm-12 pb-2">
             <button
               onClick={() => {
                 setLogement(
@@ -322,7 +332,7 @@ export const Welcome = () => {
                 </button>
               </div>
             )}
-
+            
             <button
               onClick={() => {
                 setShowFormGarage(!showformgarage);
@@ -351,35 +361,25 @@ export const Welcome = () => {
               </div>
             )}
           </div>
-        );
-      })}
-
-      {garageList.map((val, key) => {
-        return (
-          <div key={val.IdGarage} className="garage">
-            <h1> Liste des garages </h1>
-            <p>Nom du logement : {val.Nomlog}</p>
-            <p>Adresse du garage :{val.Adresse}</p>
-            <p>------------------------------</p>
+          <hr></hr>
           </div>
         );
       })}
+      <div class = "row align-center bg-light d-flex">
+        {garageList.map((val, key) => {
+          return (
+            <div key={val.IdGarage} className="garage">
+              <h1> Liste des garages </h1>
+              <p>Nom du logement : {val.Nomlog}</p>
+              <p>Adresse du garage :{val.Adresse}</p>
+              <p>------------------------------</p>
+            </div>
+          );
+        })}
+      </div>
 
-      <button>
-        <a href="/logementsell">Cliquez ici pour voir les logements vendus</a>
-      </button>
-
-      <button>
-        <a href="/create">Cliquez ici pour ajouter un nouveau logement.</a>
-      </button>
-
-      <button>
-        <a href="/listvisit">Cliquez ici pour voir la liste des visites.</a>
-      </button>
-
-      <button>
-        <a href="/listprsn">Cliquez ici pour voir la liste des personnes.</a>
-      </button>
+    </div>
+            
     </div>
   );
 };

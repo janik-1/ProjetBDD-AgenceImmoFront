@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
 
+import Sidebar from "./sidebar";
+import Header from "./Header";
+
 export const Logementsell = () => {
   const [logementListVendu, setLogementListVendu] = useState([]);
 
@@ -20,7 +23,9 @@ export const Logementsell = () => {
 
   return (
     <div className="logementsell">
-      <h1> Liste des logements vendus</h1>
+      <Sidebar />
+      <Header />
+      <h2> Liste des logements vendus</h2>
 
       {logementListVendu.map((val, key) => {
         return (

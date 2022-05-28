@@ -1,6 +1,9 @@
 import Axios from "axios";
 import { useState, useEffect } from "react";
 
+import Sidebar from "./sidebar";
+import Header from "./Header";
+
 export const Listpers = () => {
   const [ListPersonne, setListPersonne] = useState([]);
 
@@ -20,7 +23,9 @@ export const Listpers = () => {
 
   return (
     <div className="logementsell">
-      <h1> Liste des personnes</h1>
+      <Sidebar />
+      <Header />
+      <h2> Liste des personnes</h2>
 
       {ListPersonne.map((val, key) => {
         return (
