@@ -22,7 +22,7 @@ export const Listvisit = () => {
     <div className="listvist">
       <Sidebar />
       <Header />
-      <h2> Liste des visites</h2>
+      <h2 class="pt-2 mb-2"> Liste des visites</h2>
 
       {ListVisit.map((val, key) => {
         return (

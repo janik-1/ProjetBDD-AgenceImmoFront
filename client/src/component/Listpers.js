@@ -28,7 +28,7 @@ export const Listpers = () => {
     <div className="logementsell">
       <Sidebar />
       <Header />
-      <h2> Liste des personnes</h2>
+      <h2 class="pt-2 mb-2"> Liste des personnes</h2>
 
       {ListPersonne.map((val, key) => {
         return (

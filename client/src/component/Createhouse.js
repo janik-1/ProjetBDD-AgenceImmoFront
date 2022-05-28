@@ -39,7 +39,8 @@ export const Createhouse = () => {
       <Sidebar />
       <Header />
       <h2>Ajouter un nouveau logement</h2>
-      <form class="mx-auto">
+      <div class="row">
+      <form class="mx-auto ">
         <label> Nom du logement </label>
         <input
           type="text"
@@ -108,8 +109,8 @@ export const Createhouse = () => {
           <a href="/" class="text-decoration-none text-white">Ajouter le nouveau logement à la liste</a>
         </button>
       </form>
-
-      <button type="button" class="btn btn-secondary text-white white">
+      </div>
+      <button type="button" class="btn btn-secondary text-white white mb-4">
         <a href="/" class="text-decoration-none text-white"> Retour à la page d'accueil</a>
       </button>
     </div>

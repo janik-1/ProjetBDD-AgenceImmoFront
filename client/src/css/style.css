@@ -111,3 +111,7 @@
     text-decoration: none;
     color: black;
 }
+
+.createHouse input {
+    border-radius: 2%;
+}
