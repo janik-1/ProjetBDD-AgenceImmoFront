@@ -103,7 +103,9 @@ export const Welcome = () => {
     <div className="welcome">
       <div class="container-fluid">
       <Sidebar />
+      
       <Header />
+      <div class="container">
       <h2 class ="p-3"> Liste des logements disponibles</h2>
 
       {logementList.map((val, key) => {
@@ -371,7 +373,7 @@ export const Welcome = () => {
             <div key={val.IdGarage} className="garage">
               <h1> Liste des garages </h1>
               <p>Nom du logement : {val.Nomlog}</p>
-              <p>Adresse du garage :{val.Adresse}</p>
+              <p>Adresse du garage : {val.Adresse}</p>
               <p>------------------------------</p>
             </div>
           );
@@ -380,6 +382,7 @@ export const Welcome = () => {
 
     </div>
             
+    </div>
     </div>
   );
 };
